@@ -1,0 +1,16 @@
+<h1>TWU Directory</h1>
+<% if @entry %>
+    <% errors = @entry.errors %>
+    <% if !errors.nil? %>
+        <span style="background: indianred">There were errors!!</span>
+    <% end %>
+<% end %>
+<%= form_for :entry, url: {action:'create'} do |f| %>
+    <%= f.label :name, 'Name: ' %><br>
+    <%= f.text_field :name%><br>
+    <%= f.label :batch_number, 'TWU Batch: ' %><br>
+    <%= f.number_field :batch_number%><br>
+    <%= f.label :phone_number, 'Phone Number: ' %><br>
+    <%= f.phone_field :phone_number%>
+    <%= f.submit 'Save' %>
+<% end %>
