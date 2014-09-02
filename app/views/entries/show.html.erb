@@ -1,4 +1,4 @@
-<h1>Entry</h1>
+<h1>Entry <%= @entry.id%></h1>
 <p>
   <b>Name:</b>
     <%= @entry.name %>
@@ -8,4 +8,4 @@
   <%= @entry.phone_number %>
 </p>
 
-<%= button_to 'Back', entries_path %>
+<%= button_to 'Back', entries_path, method: 'get' %>

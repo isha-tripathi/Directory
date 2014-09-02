@@ -1,17 +1,21 @@
 <h1>All Entries</h1>
-<table>
-<thead>
-    <td><b>Name</b> | </td>
-    <td><b>Phone Number</b></td>
-</thead>
+<% if @entries.empty? %>
+    <h3>There are no entries for this batch. Add a new one? </h3>
+<% else %>
+    <table>
+    <thead>
+        <td><b>Name</b> | </td>
+        <td><b>Phone Number</b></td>
+    </thead>
 
-<% @entries.each do |entry| %>
-    <tr>
-      <td><%= entry.name %></td>
-      <td><%= entry.phone_number %></td>
-    </tr>
+    <% @entries.each do |entry| %>
+        <tr>
+          <td><%= entry.name %></td>
+          <td><%= entry.phone_number %></td>
+        </tr>
 
+    <% end %>
+    </table>
 <% end %>
-</table>
 
 <%= button_to 'New Entry', new_entry_path, method: 'get' %>
