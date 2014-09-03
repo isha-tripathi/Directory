@@ -4,14 +4,14 @@
 <% else %>
     <table>
     <thead>
-        <td><b>Name</b> | </td>
-        <td><b>Phone Number</b></td>
+        <td class="table-elem"><b>Name</b> </td>
+        <td class="table-elem"><b>Phone Number</b></td>
     </thead>
 
     <% @entries.each do |entry| %>
         <tr>
-          <td><%= entry.name %></td>
-          <td><%= entry.phone_number %></td>
+          <td class="table-elem"><%= entry.name %></td>
+          <td class="table-elem"><%= entry.phone_number %></td>
         </tr>
 
     <% end %>

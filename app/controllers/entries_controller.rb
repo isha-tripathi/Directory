@@ -15,7 +15,7 @@ class EntriesController < ApplicationController
   end
 
   def index
-    @entries = Entry.all
+    @entries = Entry.where(:batch_number => params[:batch_number].to_i)
   end
 
   private

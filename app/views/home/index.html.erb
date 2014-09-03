@@ -1,5 +1,9 @@
 <h1>Welcome to the TWU Directory</h1>
-
-<%= label_tag('batch_number', 'Enter TWU Batch Number')%>
-<%= text_field_tag('batch_number')%>
-<%= button_to 'Go!', entries_path, method: 'get'%>
+<% if @error %>
+    <div class="error"><%= @error %></div>
+<% end %>
+<%= form_for :batch_entry do |f| %>
+    <%= f.label :batch_number, 'Enter TWU Batch Number'%>
+    <%= f.text_field :batch_number%>
+    <%= f.submit 'Go!' %>
+<% end %>
