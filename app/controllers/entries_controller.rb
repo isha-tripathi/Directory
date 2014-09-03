@@ -15,6 +15,9 @@ class EntriesController < ApplicationController
   end
 
   def index
+    if params[:batch_number].blank?
+      redirect_to root_path
+    end
     @entries = Entry.where(:batch_number => params[:batch_number].to_i)
   end
 
